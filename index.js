@@ -18,13 +18,9 @@ function updateScore(computerScore, playerScore) {
 
     if(computerScore === 3 && playerScore < 3) {
         announcement.innerText = 'Computer Wins!';
-        playerScore = 0;
-        computerScore = 0;
     }
     else if(playerScore === 3 && computerScore < 3) {
         announcement.innerText = 'You Win!';
-        playerScore = 0;
-        computerScore = 0;
     }
 }
 
