@@ -26,7 +26,6 @@ body {
 
 .game-division-container {
     display: flex;
-    /* align-items: center; */
     padding: 0 8rem;
 }
 
@@ -88,5 +87,30 @@ body {
 }
 
 .buttons-container button:hover {
+    cursor: pointer;
+}
+
+.reset-button-container, .announcement-div {
+    display: flex;
+    padding: 1.5rem 0;
+}
+
+.announcement {
+    margin: auto;
+    font-size: 2.75rem;
+    font-family: 'Darumadrop One', cursive;
+}
+
+.reset-button {
+    margin: auto;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.25rem;
+    font-family: 'Darumadrop One', cursive;
+    border-radius: 0.75rem;
+    outline: none;
+    border: none;
+}
+
+.reset-button:hover {
     cursor: pointer;
 }

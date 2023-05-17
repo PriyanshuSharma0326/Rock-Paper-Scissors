@@ -1,6 +1,37 @@
 let computerScore = 0;
 let playerScore = 0;
-let highestScore = 0;
+
+const computerImage = document.querySelector('.computer-choice-image');
+const playerImage = document.querySelector('.player-choice-image');
+const computerScoreContainer = document.querySelector('.computer-score');
+const playerScoreContainer = document.querySelector('.player-score');
+const announcement = document.querySelector('.announcement');
+
+function updateImages(computerChoice, playerChoice) {
+    computerImage.src = `./media/${computerChoice}.png`;
+    playerImage.src = `./media/${playerChoice}.png`;
+}
+
+function updateScore(computerScore, playerScore) {
+    computerScoreContainer.innerText = computerScore;
+    playerScoreContainer.innerText = playerScore;
+
+    if(computerScore === 3 && playerScore < 3) {
+        announcement.innerText = 'Computer Wins!';
+        playerScore = 0;
+        computerScore = 0;
+    }
+    else if(playerScore === 3 && computerScore < 3) {
+        announcement.innerText = 'You Win!';
+        playerScore = 0;
+        computerScore = 0;
+    }
+}
+
+function getComputerChoice() {
+    let choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random()*3)]
+}
 
 function drawResult(computerChoice, playerChoice) {
     if(computerChoice === 'rock' && playerChoice === 'paper') {
@@ -26,18 +57,23 @@ function drawResult(computerChoice, playerChoice) {
     else if (computerChoice === 'scissors' && playerChoice === 'scissors') {}
 }
 
-function changeImage(selection) {
-    const computerImage = document.querySelector('.computer-choice-image');
-    computerImage.src = `./media/${selection}.png`;
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScore(computerScore, playerScore);
+    updateImages('null', 'null');
+    announcement.innerText = '';
 }
 
-function simulateMatch(computerChoice, playerChoice) {
-    let choices = ['rock', 'paper', 'scissors'];
-    let computerSelects = choices[Math.floor(Math.random()*3)];
-    changeImage(computerSelects);
-    console.log(computerSelects);
-    drawResult(computerSelects, 'rock');
+function simulateGame(playerInput) {
+    if(computerScore === 3 || playerScore === 3) {
+        announcement.innerText = 'Reset to play again';
+    }
+    else {
+        const playerChoice = playerInput;
+        const computerChoice = getComputerChoice();
+        updateImages(computerChoice, playerChoice);
+        drawResult(computerChoice, playerChoice);
+        updateScore(computerScore, playerScore);
+    }
 }
-
-simulateMatch('paper', 'rock');
-console.log(`Computer : ${computerScore}\nPlayer : ${playerScore}`);

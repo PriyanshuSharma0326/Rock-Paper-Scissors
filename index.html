@@ -14,7 +14,7 @@
         
         <div class="game-division-container">
             <div class="computer-division">
-                <img src="./media/paper.png" alt="" class="computer-choice-image">
+                <img src="./media/null.png" alt="" class="computer-choice-image">
             </div>
 
             <div class="score-division">
@@ -25,15 +25,23 @@
 
             <div class="player-division">
                 <div class="player-choice-image-container">
-                    <img src="./media/rock.png" alt="" class="player-choice-image">
+                    <img src="./media/null.png" alt="" class="player-choice-image">
                 </div>
                 
                 <div class="buttons-container">
-                    <button class="rock" value="rock">Rock</button>
-                    <button class="paper" value="paper">Paper</button>
-                    <button class="scissors" value="scissors">Scissors</button>
+                    <button class="rock" onclick="simulateGame('rock')" value="rock">Rock</button>
+                    <button class="paper" onclick="simulateGame('paper')" value="paper">Paper</button>
+                    <button class="scissors" onclick="simulateGame('scissors')" value="scissors">Scissors</button>
                 </div>
             </div>
+        </div>
+
+        <div class="announcement-div">
+            <h3 class="announcement"></h3>
+        </div>
+
+        <div class="reset-button-container">
+            <button class="reset-button" onclick="resetScore()">Reset</button>
         </div>
         <script src="./index.js"></script>
     </body>
