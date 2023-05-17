@@ -20,7 +20,7 @@ body {
 
 .title {
     margin: auto;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Darumadrop One', cursive;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .computer-choice-image {
-    width: 80%;
+    width: 75%;
     height: auto;
     margin: 0 auto;
     padding: 1.5rem;
@@ -65,7 +65,7 @@ body {
 }
 
 .player-choice-image {
-    width: 80%;
+    width: 75%;
     height: auto;
     margin: 0 auto;
     padding: 1.5rem;
@@ -113,4 +113,96 @@ body {
 
 .reset-button:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .game-division-container {
+        padding: 0 4rem;
+    }
+
+    .computer-division {
+        width: 37.5%;
+    }
+
+    .score-division {
+        width: 25%;
+    }
+
+    .game-score, .announcement {
+        font-size: 2.5rem;
+    }
+
+    .player-division {
+        width: 37.5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .game-division-container {
+        padding: 0 2rem;
+    }
+
+    .computer-division {
+        width: 40%;
+    }
+
+    .score-division {
+        width: 20%;
+    }
+
+    .player-division {
+        width: 40%;
+    }
+
+    .buttons-container button {
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    .reset-button {
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .game-division-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .computer-division {
+        width: 80%;
+    }
+
+    .score-division {
+        width: 80%;
+    }
+
+    .player-division {
+        width: 80%;
+    }
+
+    .announcement-div {
+        padding: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .computer-division {
+        width: 90%;
+    }
+
+    .score-division {
+        width: 90%;
+    }
+
+    .player-division {
+        width: 90%;
+    }
 }
