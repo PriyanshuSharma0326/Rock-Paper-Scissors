@@ -1,6 +1,6 @@
 # ROCK-PAPER-SCISSORS
 
-![Design preview for Rock-Paper-Scissors Game](./design/desktop-design.jpg)
+![Design preview for Rock-Paper-Scissors Game](./design/desktop-design.png)
 
 ## Welcome! 👋
 
